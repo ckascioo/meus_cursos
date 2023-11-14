@@ -1,0 +1,13 @@
+{% extends 'cursos/base.html' %} <!-- Caminho para o template base -->
+{% block conteudo %}
+{% load crispy_forms_tags %} <!-- Para usar a biblioteca crispy que foi adicionada em settings -->
+
+<div class="container">
+    <h1>Formulário Novo Curso</h1>
+    <form action="" method="POST"> <!-- Ação com metodo de postagem -->
+        {% csrf_token %} <!-- Token de segurança -->
+        {{formulario | crispy}} <!-- Para usar a biblioteca crispy foi usado o | crispy -->
+        <button type="submit" class="btn btn-success">Salvar</button> <!-- Botao para enviar a informação/salvar -->
+    </form>
+</div>
+{% endblock %}

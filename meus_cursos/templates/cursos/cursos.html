@@ -17,6 +17,13 @@
         <tr>
             <td>{{dado.id}}</td>
             <td>{{dado.curso}}</td>
+
+            {% if dado.finalizado %} <!-- Para usar a caixa de checkbox -->
+            <td style="text-align: center"><input disabled type="checkbox" checked></td> 
+            {% else %}
+            <td style="text-align: center"><input disabled type="checkbox"></td>
+            {% endif %} <!-- Para finalizar a caixa de checkbox -->
+
             <td>{{dado.finalizado}}</td>
             <td>{{dado.descrição}}</td>
             <td><button class="btn btn-info"><a style="color: white;" href="{% url 'detalhe' dado.id %}">Detalhe</a></button></td>
